@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnowRunner Save Editor by MrBoxik</title>
+  <meta name="description" content="SnowRunner Save Editor by MrBoxik. Free browser tool to edit SnowRunner save files, missions, contests, objectives, upgrades, rules, and more.">
+  <meta name="keywords" content="SnowRunner Save Editor, SnowRunner, save editor, MrBoxik, SnowRunner save file, CompleteSave, CommonSslSave">
+  <meta name="author" content="MrBoxik">
+  <meta name="application-name" content="SnowRunner Save Editor by MrBoxik">
+  <meta name="apple-mobile-web-app-title" content="SnowRunner Save Editor">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#0d1a23">
+  <link rel="canonical" href="https://mrboxik.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SnowRunner Save Editor by MrBoxik">
+  <meta property="og:description" content="Browser-based SnowRunner save editor for CompleteSave and CommonSslSave files.">
+  <meta property="og:url" content="https://mrboxik.github.io/">
+  <meta property="og:site_name" content="SnowRunner Save Editor by MrBoxik">
+  <meta property="og:image" content="https://mrboxik.github.io/assets/icons/android-chrome-512x512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SnowRunner Save Editor by MrBoxik">
+  <meta name="twitter:description" content="Browser-based SnowRunner save editor for CompleteSave and CommonSslSave files.">
+  <meta name="twitter:image" content="https://mrboxik.github.io/assets/icons/android-chrome-512x512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"></noscript>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SnowRunner Save Editor by MrBoxik",
+      "alternateName": [
+        "SnowRunner Save Editor",
+        "MrBoxik SnowRunner Save Editor"
+      ],
+      "url": "https://mrboxik.github.io/"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SnowRunner Save Editor by MrBoxik",
+      "alternateName": "SnowRunner Save Editor",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "url": "https://mrboxik.github.io/",
+      "author": {
+        "@type": "Person",
+        "name": "MrBoxik"
+      },
+      "description": "Browser-based SnowRunner save editor for editing CompleteSave and CommonSslSave files.",
+      "keywords": [
+        "SnowRunner Save Editor",
+        "MrBoxik",
+        "SnowRunner",
+        "save editor",
+        "CompleteSave",
+        "CommonSslSave"
+      ]
+    }
+  </script>
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./styles.css?v=20260410-1">
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <main class="app-shell">
+    <header class="hero">
+      <h1>SnowRunner Save Editor</h1>
+      <p>made with hatred for bugs by: MrBoxik</p>
+      <div class="hero-logo-badge" aria-hidden="true">
+        <img class="hero-logo" src="./app_icon.ico" alt="" width="86" height="86" loading="lazy" decoding="async" fetchpriority="low">
+      </div>
+    </header>
+
+    <section class="upload-zone">
+      <article class="upload-card upload-card-wide" id="folder-card">
+        <div class="upload-card-head">
+          <h2>Save Folder (Recommended)</h2>
+          <div class="tab-callouts">
+            <div class="tab-note">
+              <button type="button" class="tab-note-btn" aria-label="Info for save folder loading">i</button>
+              <div class="tab-note-popover">
+                Instructions for loading:<br>
+                Slot 1 CompleteSave.cfg<br>
+                Slot 2 CompleteSave1.cfg<br>
+                Slot 3 CompleteSave2.cfg<br>
+                Slot 4 CompleteSave3.cfg<br>
+                Steam saves are typically found at:<br>
+                [Steam install]/userdata/[steam_id]/1465360/remote<br>
+                Epic and other platforms:<br>
+                %USERPROFILE%\Documents\My Games\SnowRunner\base\storage\&lt;unique_key_folder&gt;<br>
+                WGS / Xbox App saves are typically found at:<br>
+                %LOCALAPPDATA%\Packages\FocusHomeInteractiveSA.SnowRunnerWindows10_4hny5m903y3g0\SystemAppData\wgs\&lt;user_id&gt;_&lt;title_id&gt;
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>Upload a save folder (recommended) or a single file. The editor auto-loads save files and fog files, including decoded WGS / Xbox App folders.</p>
+        <input id="folder-input" type="file" webkitdirectory directory multiple hidden>
+        <input id="main-file-input" type="file" hidden>
+        <input id="common-file-input" type="file" hidden>
+        <input id="single-file-input" type="file" hidden>
+        <button id="folder-upload-btn" class="btn btn-primary">Upload Save Folder</button>
+        <button id="single-upload-btn" class="btn">Upload Single File</button>
+        <div class="share-optin-row">
+          <label class="share-optin-label" for="improve-share-checkbox">
+            <input id="improve-share-checkbox" type="checkbox">
+            <span>Help improve editor (optional)</span>
+          </label>
+          <div class="share-optin-note">
+            <button type="button" class="share-optin-note-btn" aria-label="About optional anonymous upload">i</button>
+            <div class="share-optin-popover">If enabled, a copy of your save file will be uploaded anonymously and used only for improving features and fixing bugs. Files are stored privately and never shared.</div>
+          </div>
+        </div>
+        <div id="improve-share-meta" class="meta">Optional upload: off.</div>
+        <div id="folder-meta" class="meta">No folder loaded.</div>
+        <div id="main-meta" class="meta">Main Save: not loaded.</div>
+        <div id="common-meta" class="meta">CommonSslSave: not loaded.</div>
+        <div class="folder-choice-wrap">
+          <p class="help">Pick which `CompleteSave*` or decoded WGS main save is currently active in editor tabs:</p>
+          <div id="folder-main-choices" class="folder-choice-list"></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="download-bar">
+      <button id="download-main-btn" class="btn btn-accent" disabled>Download Edited Main Save</button>
+      <button id="download-common-btn" class="btn btn-accent" disabled>Download Edited CommonSslSave</button>
+      <button id="download-folder-btn" class="btn btn-accent" disabled>Download Edited Folder (.zip)</button>
+    </section>
+
+    <div id="status" class="status info">Ready. Upload a file to start.</div>
+
+    <nav class="tab-nav" id="tab-nav">
+      <button class="tab-btn active" data-tab="save">Game Stats</button>
+      <button class="tab-btn" data-tab="money">Money & Rank</button>
+      <button class="tab-btn" data-tab="time">Time</button>
+      <button class="tab-btn" data-tab="objectives">Objectives+</button>
+      <button class="tab-btn" data-tab="regions">Regions+</button>
+      <button class="tab-btn" data-tab="fog">Fog Tool</button>
+      <button class="tab-btn" data-tab="rules">Rules</button>
+      <button class="tab-btn" data-tab="trials">Trials</button>
+      <button class="tab-btn" data-tab="pros">PROS</button>
+      <button class="tab-btn" data-tab="achievements">Achievements</button>
+    </nav>
+
+    <section class="tab-panel active" id="panel-save">
+      <div class="panel-head">
+        <h3>Game Stats</h3>
+      </div>
+      <p class="help">Edit `distance` and `gameStat` directly from the main save file.</p>
+      <div class="button-grid compact">
+        <button id="refresh-game-stats-btn" class="btn">Refresh from file</button>
+        <button id="save-game-stats-btn" class="btn btn-primary">Save Game Stats</button>
+      </div>
+      <p id="game-stats-info" class="help">No file loaded.</p>
+      <div class="stats-grid">
+        <article class="stats-col">
+          <h4>Distance</h4>
+          <div id="distance-list" class="stats-list"></div>
+        </article>
+        <article class="stats-col">
+          <h4>Game Statistics</h4>
+          <div id="game-stat-list" class="stats-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-money">
+      <div class="panel-head">
+        <h3>Money & Rank</h3>
+      </div>
+      <div class="form-grid">
+        <label>Money <input id="money-input" type="number" step="1" placeholder="e.g. 999999"></label>
+        <label>Rank (1-30) <input id="rank-input" type="number" step="1" min="1" max="30" placeholder="e.g. 30"></label>
+        <label>Experience <input id="xp-input" type="number" step="1" min="0" placeholder="e.g. 250000"></label>
+      </div>
+      <button id="apply-money-rank-btn" class="btn btn-primary">Apply Money / Rank / XP</button>
+      <div class="rank-xp-help" id="rank-xp-help">
+        <button type="button" id="rank-xp-help-btn" class="rank-xp-help-btn" aria-label="Rank to XP table">i</button>
+        <div id="rank-xp-popover" class="rank-xp-popover" role="tooltip">
+          <div class="rank-xp-title">XP Requirements (Rank : XP)</div>
+          <div id="rank-xp-table" class="rank-xp-table"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-time">
+      <div class="panel-head">
+        <h3>Time</h3>
+        <div class="tab-callouts">
+          <div class="tab-note">
+            <button type="button" class="tab-note-btn" aria-label="Info for Time">i</button>
+            <div class="tab-note-popover">Time Speed Settings:<br>2.0 = Twice as fast<br>1.0 = normal speed<br>0.0 = time stops<br>-1.0 = Rewinds time<br>-2.0 = Twice as fast in reverse.</div>
+          </div>
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Time">⚠</button>
+            <div class="tab-note-popover">Time settings only apply in New Game+ mode.<br><br>If one value is positive and the other is negative, time will freeze at the transition (day to night or night to day).</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-grid">
+        <label>Day Speed <input id="time-day-input" type="number" step="0.01" placeholder="1.0"></label>
+        <label>Night Speed <input id="time-night-input" type="number" step="0.01" placeholder="1.0"></label>
+        <label class="time-toggle-field">
+          <span>Allow skip time</span>
+          <div class="time-toggle-box">
+            <input id="skip-time-input" type="checkbox" aria-label="Allow skip time">
+          </div>
+        </label>
+      </div>
+      <button id="apply-time-btn" class="btn btn-primary">Apply Time Settings</button>
+    </section>
+
+    <section class="tab-panel" id="panel-missions">
+      <div class="panel-head">
+        <h3>Missions</h3>
+        <div class="tab-callouts">
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Missions">⚠</button>
+            <div class="tab-note-popover">You must accept the task or mission in the game before it can be completed.</div>
+          </div>
+        </div>
+      </div>
+      <p class="help">Mark selected season/map mission objectives as finished.</p>
+      <div id="missions-selector"></div>
+      <button id="apply-missions-btn" class="btn btn-primary">Complete Selected Missions</button>
+    </section>
+
+    <section class="tab-panel" id="panel-contests">
+      <div class="panel-head">
+        <h3>Contests</h3>
+        <div class="tab-callouts">
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Contests">⚠</button>
+            <div class="tab-note-popover">You must accepted (discovered) the contests for them to be marked as completed.<br><br>also completes all unfinished tasks found on the map.</div>
+          </div>
+        </div>
+      </div>
+      <p class="help">Marks discovered objectives from selected regions as finished in `CompleteSave*` blocks.</p>
+      <div id="contests-selector"></div>
+      <button id="apply-contests-btn" class="btn btn-primary">Mark Contests Complete</button>
+    </section>
+
+    <section class="tab-panel" id="panel-objectives">
+      <div class="panel-head">
+        <h3>Objectives+</h3>
+        <div class="tab-callouts">
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Objectives Plus">⚠</button>
+            <div class="tab-note-popover">Warning — persistent save edits:<br><br>1) Once you exit the editor with applied changes you can't un-complete those objectives without restoring a backup.<br><br>2) You will not receive in-game rewards for objectives you mark as completed through this editor.<br><br>3) Marking contracts that are locked behind other contracts will break the game until you also mark the prerequisite contracts — check in-game prerequisites before using this tool.</div>
+          </div>
+        </div>
+      </div>
+      <p class="help">Loads `objectiveStates` and lets you mark filtered entries as completed. Uses embedded objective catalog data only.</p>
+      <div class="form-grid objectives-search-grid">
+        <label>Search objective key/name <input id="objectives-search" type="text" placeholder="e.g. US_04_01 or Michigan"></label>
+      </div>
+      <div class="form-grid objectives-filter-grid">
+        <label>Type
+          <select id="objectives-type">
+            <option value="">All types</option>
+            <option value="TASK">Task</option>
+            <option value="CONTRACT">Contract</option>
+            <option value="CONTEST">Contest</option>
+          </select>
+        </label>
+        <label>Region
+          <select id="objectives-region">
+            <option value="">All regions</option>
+          </select>
+        </label>
+        <label>Category
+          <select id="objectives-category">
+            <option value="">All categories</option>
+            <option value="truckDelivery">Truck Delivery</option>
+            <option value="cargoDelivery">Cargo Delivery</option>
+            <option value="exploration">Exploration</option>
+          </select>
+        </label>
+      </div>
+      <div class="button-grid compact">
+        <button id="refresh-objectives-btn" class="btn">Refresh list</button>
+        <button id="select-objectives-btn" class="btn">Select filtered</button>
+        <button id="clear-objectives-btn" class="btn">Clear selection</button>
+        <button id="complete-objectives-btn" class="btn btn-primary">Complete selected</button>
+      </div>
+      <p id="objectives-info" class="help">No file loaded.</p>
+      <div id="objectives-list" class="objectives-list"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-regions">
+      <div class="panel-head">
+        <h3>Regions+</h3>
+        <div class="tab-callouts">
+          <div class="tab-note">
+            <button type="button" class="tab-note-btn" aria-label="Info for Regions Plus">i</button>
+            <div class="tab-note-popover">Desktop-aligned bulk workflow. Pick regions once, then apply one or more region features in a single pass. Legacy Missions and Contests stay hidden by default, like the desktop editor.</div>
+          </div>
+        </div>
+      </div>
+      <p class="help">Pick the regions, then tick the features you want to apply.</p>
+      <label class="checkbox-line"><input id="regions-show-legacy" type="checkbox"> Show legacy actions (Missions / Contests)</label>
+      <div id="regions-selector"></div>
+      <div class="regions-card">
+        <div class="button-grid compact">
+          <button id="regions-check-all-btn" class="btn">Check all features</button>
+          <button id="regions-clear-btn" class="btn">Clear features</button>
+        </div>
+        <div id="regions-feature-list" class="regions-feature-list"></div>
+        <p id="regions-info" class="help">No region features selected.</p>
+        <button id="apply-regions-btn" class="btn btn-primary">Apply Selected Features</button>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-upgrades">
+      <div class="panel-head">
+        <h3>Upgrades</h3>
+        <div class="tab-callouts">
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Upgrades">⚠</button>
+            <div class="tab-note-popover">At least one upgrade must be marked or collected in-game for this to work.<br><br>If a new season is added, you may need to mark or collect one new upgrade.</div>
+          </div>
+        </div>
+      </div>
+      <div id="upgrades-selector"></div>
+      <button id="unlock-upgrades-btn" class="btn btn-primary">Unlock Upgrades</button>
+    </section>
+
+    <section class="tab-panel" id="panel-watchtowers">
+      <div class="panel-head">
+        <h3>Watchtowers</h3>
+        <div class="tab-callouts">
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Watchtowers">⚠</button>
+            <div class="tab-note-popover">It will mark them as found but wont reveal the map use the Fog Tool for that.</div>
+          </div>
+        </div>
+      </div>
+      <div id="watchtowers-selector"></div>
+      <button id="unlock-watchtowers-btn" class="btn btn-primary">Unlock Watchtowers</button>
+    </section>
+
+    <section class="tab-panel" id="panel-discoveries">
+      <div class="panel-head">
+        <h3>Discoveries</h3>
+        <div class="tab-callouts">
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Discoveries">⚠</button>
+            <div class="tab-note-popover">Sets discovered trucks to their max for selected regions but won't add them to garage.</div>
+          </div>
+        </div>
+      </div>
+      <div id="discoveries-selector"></div>
+      <button id="unlock-discoveries-btn" class="btn btn-primary">Unlock Discoveries</button>
+    </section>
+
+    <section class="tab-panel" id="panel-levels">
+      <div class="panel-head">
+        <h3>Levels</h3>
+        <div class="tab-callouts">
+          <div class="tab-note">
+            <button type="button" class="tab-note-btn" aria-label="Info for Levels">i</button>
+            <div class="tab-note-popover">Lets you view regions you haven't visited yet.</div>
+          </div>
+        </div>
+      </div>
+      <div id="levels-selector"></div>
+      <button id="unlock-levels-btn" class="btn btn-primary">Unlock Levels</button>
+    </section>
+
+    <section class="tab-panel" id="panel-garages">
+      <div class="panel-head">
+        <h3>Garages</h3>
+        <div class="tab-callouts">
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Garages">⚠</button>
+            <div class="tab-note-popover">Garages will be unlocked but may be hidden under fog of war. To make it work correctly, don't open the map itself to go into the garage. Instead, in map-selection put your cursor over the map you want — you should see a yellow-highlighted garage icon in the bottom part of the map labeled "Garage Opened". Click it to port into the garage instantly. The garage can still be hidden under fog, so drive to the yellow garage box (entrance/move to garage) to reveal it on the map. Recover feature on that map will be semi-broken until you find the garage entrance. Note: some garage entrances are hidden behind a quest, so you may need to use Objectives+ or complete it yourself (e.g., the garage in Amur – Chernokamensk).</div>
+          </div>
+        </div>
+      </div>
+      <div id="garages-selector"></div>
+      <label class="checkbox-line"><input id="garage-upgrade-all" type="checkbox"> Upgrade all garages (when possible)</label>
+      <button id="unlock-garages-btn" class="btn btn-primary">Unlock Garages</button>
+    </section>
+
+    <section class="tab-panel" id="panel-fog">
+      <div class="panel-head">
+        <h3>Fog Tool</h3>
+        <div class="tab-callouts">
+          <div class="tab-note">
+            <button type="button" class="tab-note-btn" aria-label="Info for Fog Tool">i</button>
+            <div class="tab-note-popover">Fog Image Tool — Tutorial: The Fog Image Tool lets you edit SnowRunner fog maps directly from your save files. Editor Tab → fine-tune each fog map manually or create artistic custom maps. Automation Tab → quickly cover or uncover entire maps, regions, or seasons. Fog maps are aligned with the map camera default position, so edits match what you see in-game.</div>
+          </div>
+        </div>
+      </div>
+      <p class="help">Works with fog files from uploaded save folder. Editor + automation are both available.</p>
+
+      <div class="fog-card">
+        <h4>Editor</h4>
+        <div class="form-grid fog-editor-controls">
+          <label>Fog file
+            <select id="fog-file-select">
+              <option value="">No fog files loaded</option>
+            </select>
+          </label>
+          <label>Brush size
+            <input id="fog-brush-size" type="number" min="1" max="256" step="1" value="8">
+          </label>
+          <label>Brush color
+            <select id="fog-brush-color">
+              <option value="1">Black (covered)</option>
+              <option value="128">Gray</option>
+              <option value="255" selected>White (revealed)</option>
+            </select>
+          </label>
+        </div>
+        <div class="button-grid compact">
+          <button id="fog-open-btn" class="btn">Open selected fog file</button>
+          <button id="fog-save-btn" class="btn btn-primary">Save to loaded folder file</button>
+          <button id="fog-download-current-btn" class="btn">Download current fog file</button>
+        </div>
+        <p id="fog-editor-info" class="help">Upload a save folder to load fog files.</p>
+        <div class="fog-canvas-wrap">
+          <canvas id="fog-canvas" width="960" height="520"></canvas>
+        </div>
+      </div>
+
+      <div class="fog-card">
+        <h4>Automation</h4>
+        <div class="form-grid fog-automation-grid">
+          <label>Save slot
+            <select id="fog-slot-select">
+              <option value="1">Slot 1</option>
+              <option value="2">Slot 2</option>
+              <option value="3">Slot 3</option>
+              <option value="4">Slot 4</option>
+            </select>
+          </label>
+          <label>Season filter mode
+            <select id="fog-filter-mode">
+              <option value="all">All regions</option>
+              <option value="selected">Selected regions/seasons only</option>
+            </select>
+          </label>
+          <label>Other season number(s)
+            <input id="fog-extra-seasons" type="text" placeholder="e.g. 18,19">
+          </label>
+        </div>
+        <div id="fog-region-filters" class="checklist-grid fog-region-grid"></div>
+        <div class="button-grid compact">
+          <button id="fog-cover-btn" class="btn">Cover all (black)</button>
+          <button id="fog-uncover-btn" class="btn btn-primary">Uncover all (white)</button>
+        </div>
+        <p id="fog-auto-info" class="help">No automation action yet.</p>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-rules">
+      <div class="panel-head">
+        <h3>Rules</h3>
+      </div>
+      <p class="help">Desktop-aligned New Game+ rule editor, including random rules, DLC vehicle availability, trailer store availability, special linked fields, and settings dictionary sync.</p>
+      <div id="rules-editor" class="rules-editor"></div>
+      <label class="checkbox-line"><input id="rules-random" type="checkbox"> Random rules</label>
+      <button id="apply-rules-btn" class="btn btn-primary">Apply Rules</button>
+    </section>
+
+    <section class="tab-panel" id="panel-trials">
+      <div class="panel-head">
+        <h3>Trials (CommonSslSave)</h3>
+      </div>
+      <p class="help">If this tab says file missing, upload `CommonSslSave` above.</p>
+      <div class="button-grid compact">
+        <button id="trials-select-all-btn" class="btn">Select all</button>
+        <button id="trials-clear-btn" class="btn">Clear all</button>
+      </div>
+      <div id="trials-list" class="checklist-grid"></div>
+      <button id="save-trials-btn" class="btn btn-primary">Save Trials</button>
+    </section>
+
+    <section class="tab-panel" id="panel-pros">
+      <div class="panel-head">
+        <h3>PROS (CommonSslSave)</h3>
+      </div>
+      <div class="checklist-grid">
+        <label><input id="pros-registration" type="checkbox"> Mammoth Ornament & Stickers</label>
+        <label><input id="pros-roadcraft" type="checkbox"> Voron-AE4380 skin + 3 stickers</label>
+      </div>
+      <button id="save-pros-btn" class="btn btn-primary">Save PROS Entitlements</button>
+    </section>
+
+    <section class="tab-panel" id="panel-achievements">
+      <div class="panel-head">
+        <h3>Achievements (CommonSslSave)</h3>
+        <div class="tab-callouts">
+          <div class="tab-note is-warning">
+            <button type="button" class="tab-note-btn" aria-label="Warning for Achievements">⚠</button>
+            <div class="tab-note-popover">Steam achievements will also be unlocked, but they can't be removed with this editor. It's meant mainly for the in-game Achievements tab.</div>
+          </div>
+        </div>
+      </div>
+      <p id="achievements-stats" class="help">No CommonSslSave loaded.</p>
+      <div class="button-grid compact">
+        <button id="unlock-achievements-btn" class="btn btn-primary">Unlock All Existing Achievement Entries</button>
+      </div>
+    </section>
+  </main>
+
+  <aside class="edge-links edge-links-left" aria-label="Support links">
+    <a class="edge-link" href="https://buymeacoffee.com/mrboxik" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+    <a class="edge-link" href="https://discord.com/users/638802769393745950" target="_blank" rel="noopener noreferrer"><img class="edge-link-icon" src="./assets/icons/discord.svg" alt="" aria-hidden="true">Q&amp;A</a>
+  </aside>
+
+  <aside class="edge-links edge-links-right" aria-label="Project links">
+    <a class="edge-link" href="https://github.com/MrBoxik/SnowRunner-Save-Editor" target="_blank" rel="noopener noreferrer"><img class="edge-link-icon" src="./assets/icons/github.svg" alt="" aria-hidden="true">Original</a>
+    <a class="edge-link" href="https://github.com/MrBoxik/SnowRunner-Save-Editor/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">📜 License</a>
+  </aside>
+
+  <script defer src="./assets/safe-defaults.min.js?v=20260226-1"></script>
+  <script defer src="./app.js?v=20260410-1"></script>
+</body>
+</html>

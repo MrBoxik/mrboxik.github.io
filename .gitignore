@@ -1,0 +1,7 @@
+sfiles/
+snowrunner_editor.py
+tmp_*.txt
+app.min.js
+styles.min.css
+data/__pycache__/
+*.pyc
