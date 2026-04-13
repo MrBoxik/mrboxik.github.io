@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | SnowRunner Save Editor by MrBoxik</title>
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#0d1a23">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d141a;
+      --panel: #1d2931;
+      --text: #e6eef2;
+      --muted: #9db0bb;
+      --accent: #d1913d;
+      --line: #445763;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top, rgba(115, 180, 206, 0.12), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(209, 145, 61, 0.18), transparent 34%),
+        linear-gradient(180deg, #111920 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.5 "Segoe UI", Rajdhani, sans-serif;
+    }
+
+    main {
+      width: min(640px, 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(29, 41, 49, 0.92);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+      padding: 28px 24px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(209, 145, 61, 0.35);
+      background: rgba(209, 145, 61, 0.12);
+      color: #f4dfc2;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      padding: 11px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      border: 1px solid rgba(209, 145, 61, 0.5);
+      background: linear-gradient(180deg, rgba(209, 145, 61, 0.34), rgba(145, 91, 26, 0.4));
+      color: #fff4e3;
+    }
+
+    code {
+      font-family: "Space Mono", Consolas, monospace;
+      font-size: 0.92em;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>404</h1>
+    <p>This page does not exist.</p>
+    <p id="message">The link may be old or broken. Use the main homepage below.</p>
+    <div id="legacy-note" class="note" hidden>Old project-page link detected. Redirecting to the new root site.</div>
+    <div class="actions">
+      <a class="btn" href="/">Open Homepage</a>
+    </div>
+  </main>
+  <script>
+    (function () {
+      const oldPrefix = "/snowrunner-save-editor-web";
+      const path = String(window.location.pathname || "");
+      const lowerPath = path.toLowerCase();
+      const message = document.getElementById("message");
+      const legacyNote = document.getElementById("legacy-note");
+      if (lowerPath === oldPrefix || lowerPath.startsWith(oldPrefix + "/")) {
+        if (message) {
+          message.textContent = "This old project URL has moved to the root site.";
+        }
+        if (legacyNote) {
+          legacyNote.hidden = false;
+        }
+        window.setTimeout(() => {
+          window.location.replace("/");
+        }, 250);
+      }
+    })();
+  </script>
+</body>
+</html>
