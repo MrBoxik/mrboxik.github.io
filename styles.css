@@ -518,6 +518,18 @@ body {
   color: var(--muted);
 }
 
+.rules-option-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 6px 0 12px;
+}
+
+.rules-option-row .checkbox-line {
+  margin: 0;
+}
+
 .share-optin-row {
   display: flex;
   align-items: center;
@@ -1006,13 +1018,33 @@ body {
   color: #dde9ef;
 }
 
-.rule-row select {
+.rule-control-stack {
+  display: grid;
+  min-width: 0;
+}
+
+.rule-row select,
+.rule-row input[type="number"] {
   border: 1px solid color-mix(in srgb, var(--border) 88%, #72828b 12%);
   border-radius: 8px;
   padding: 7px 8px;
   font: inherit;
   background: rgba(20, 28, 33, 0.9);
   color: var(--text);
+  width: 100%;
+  min-width: 0;
+}
+
+.rule-row select[hidden],
+.rule-row input[hidden] {
+  display: none;
+}
+
+.rule-row select:focus,
+.rule-row input[type="number"]:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--accent) 70%, #cddde6 30%);
+  box-shadow: 0 0 0 2px rgba(115, 180, 206, 0.22);
 }
 
 .fog-card {

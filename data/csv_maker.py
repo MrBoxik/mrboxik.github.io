@@ -57,6 +57,7 @@ REGION_LIST = [
     ("US_15", "Quebec"),
     ("US_16", "Washington"),
     ("RU_17", "Zurdania"),
+    ("US_18", "Chiapas"),
 ]
 REGION_ORDER = [r for r, _ in REGION_LIST]
 REGION_LOOKUP = dict(REGION_LIST)
@@ -495,7 +496,15 @@ def stage_scraper():
             def score(x):
                 if not x:
                     return 999999
-                return x.count("�") + x.count("Ã") + x.count("Â") + x.count("\ufffd")
+                c1_controls = sum(1 for ch in x if 0x80 <= ord(ch) <= 0x9F)
+                return (
+                    x.count("�")
+                    + x.count("Ã")
+                    + x.count("Â")
+                    + x.count("\ufffd")
+                    + x.count("â")
+                    + c1_controls
+                )
             best = min(candidates, key=score)
             return best.strip()
 

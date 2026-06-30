@@ -68,7 +68,7 @@
   <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20260410-1">
+  <link rel="stylesheet" href="./styles.css?v=20260630-1">
 </head>
 <body>
   <div class="bg-orb orb-a"></div>
@@ -470,9 +470,16 @@
       <div class="panel-head">
         <h3>Rules</h3>
       </div>
-      <p class="help">Desktop-aligned New Game+ rule editor, including random rules, DLC vehicle availability, trailer store availability, special linked fields, and settings dictionary sync.</p>
+      <p class="help">Desktop-aligned New Game+ rule editor, including random rules, custom multiplier values, DLC vehicle availability, trailer store availability, special linked fields, and settings dictionary sync.</p>
       <div id="rules-editor" class="rules-editor"></div>
-      <label class="checkbox-line"><input id="rules-random" type="checkbox"> Random rules</label>
+      <div class="rules-option-row">
+        <label class="checkbox-line"><input id="rules-random" type="checkbox"> Random rules</label>
+        <label class="checkbox-line"><input id="rules-custom" type="checkbox"> Custom rules</label>
+        <div class="tab-note is-warning">
+          <button type="button" class="tab-note-btn" aria-label="Info for custom rules">i</button>
+          <div class="tab-note-popover">Custom rules replace multiplier presets with exact numbers.<br><br>Only multiplier rules change; option-only rules stay as dropdowns.<br><br>The value is applied as a multiplier to the rule's default value. Example: 50 means default value x 50.</div>
+        </div>
+      </div>
       <button id="apply-rules-btn" class="btn btn-primary">Apply Rules</button>
     </section>
 
@@ -528,6 +535,6 @@
   </aside>
 
   <script defer src="./assets/safe-defaults.min.js?v=20260226-1"></script>
-  <script defer src="./app.js?v=20260426-1"></script>
+  <script defer src="./app.js?v=20260630-1"></script>
 </body>
 </html>
